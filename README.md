@@ -10,6 +10,10 @@ There are various ways to do this documented throughout the internet, but someti
 
 ## Usage
 
+```javascript
+import { breakpointUp } from '@doubleedesign/styled-media-queries';
+```
+
 **Standalone, passing a number:**
 ```javascript
 export const SampleElement = styled.div`

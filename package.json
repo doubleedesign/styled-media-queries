@@ -1,0 +1,23 @@
+{
+	"name": "@doubleedesign/styled-media-queries",
+	"version": "0.1",
+	"type": "module",
+	"main": "dist/styled-media-queries.js",
+	"description": "Shorthand for media queries within styled components",
+	"author": "Leesa Ward",
+	"license": "MIT",
+	"scripts": {
+		"build": "tsc"
+	},
+	"peerDependencies": {
+		"styled-components": "^5.3.9"
+	},
+	"devDependencies": {
+		"@types/styled-components": "^5.1.26",
+		"@typescript-eslint/eslint-plugin": "^5.56.0",
+		"@typescript-eslint/parser": "^5.56.0",
+		"eslint": "^8.36.0",
+		"styled-components": "^5.3.9",
+		"typescript": "^5.0.2"
+	}
+}
