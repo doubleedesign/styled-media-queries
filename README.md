@@ -2,6 +2,10 @@
 
 Shorthand for media queries within [styled-components](https://styled-components.com/).
 
+Find on NPM - link coming soon
+
+---
+
 ## Motivation
 
 I wanted a shorthand way of writing media queries within CSS declarations in styled components like I do in SCSS, e.g., Foundation's `@include breakpoint(large up)` and Bootstrap's `@include media-breakpoint-up(lg)` mixins.
