@@ -5,6 +5,10 @@
 	"main": "dist/styled-media-queries.js",
 	"description": "Shorthand for media queries within styled components",
 	"author": "Leesa Ward",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/doubleedesign/styled-media-queries"
+	},
 	"license": "MIT",
 	"scripts": {
 		"build": "tsc"
