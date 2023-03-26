@@ -39,7 +39,7 @@ export const SampleElement = styled.div`
 `;
 ```
 ```javascript
-export const HeaderLogo = styled.div`
+export const SampleElement = styled.div`
     width: 30%;
     flex-basis: 30%;
     
