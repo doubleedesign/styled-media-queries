@@ -1,6 +1,6 @@
 {
 	"name": "@doubleedesign/styled-media-queries",
-	"version": "0.1.1",
+	"version": "0.1.3",
 	"type": "module",
 	"main": "dist/styled-media-queries.js",
 	"description": "Shorthand for media queries within styled components",
