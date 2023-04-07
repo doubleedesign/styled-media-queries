@@ -37,7 +37,7 @@ export const SampleElement = styled.div`
 
 In these examples, the theme object passed to the ThemeProvider contains an object called `breakpoints` with key-value pairs like `sm: 576`, `md: 768`. Adjust to suit your own theme.
 
-The below examples are all equivalent. I like the first one because it's concise, others like to destructure the theme object, and sometimes explicity including a `return` statement can be clearer in more complex cases.
+The below three examples are all equivalent. I like the first one because it's concise, others like to destructure the theme object, and sometimes explicity including a `return` statement can be clearer in more complex cases.
 
 ```javascript
 export const SampleElement = styled.div`
@@ -74,6 +74,19 @@ export const SampleElement = styled.div`
     }};
 `;
 ```
+With functions inside: 
+
+```typescript
+export const SampleElement = styled.div`
+    background: ${({ theme }): string => theme.colors.light};
+    
+    ${props => breakpointUp(props.theme.breakpoints.md, css`
+        background: ${props.theme.colors.dark};
+    `)};
+`;
+
+
+```
 
 ## Available functions
 
@@ -106,4 +119,4 @@ I initially used phrasing such as `breakpointUp` and `breakpointDown` in line wi
 | `startBreakpoint` and `endBreakpoint`           | numbers; pixel values for the lower and upper bound of a between-breakpoints media query. |
 | `height`                                        | number; pixel value for a height breakpoint.                                              |
 | `width` and `height` for aspect ratio functions | numbers; proportional values for aspect ratio calculations                                |
-| `styles`                                        | styled-components `simpleInterpolation` (see Usage section above for examples)            |
+| `styles`                                        | styled-components [`css` template literal](https://styled-components.com/docs/api#css) (see Usage section above for examples)            |
