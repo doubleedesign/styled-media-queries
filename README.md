@@ -62,4 +62,18 @@ export const SampleElement = styled.div`
     }};
 `;
 ```
+**Note**: `css` is optional for basic CSS - you _can_ just pass a template literal on its own; but including `css` is helpful for enabling syntax highlighting. That said, [if you have functions inside, you _do_ need to use `css`](https://styled-components.com/docs/api#css):
+
+```typescript
+export const SampleElement = styled.div`
+    background: ${({ theme }): string => theme.colors.light};
+    
+    ${props => breakpointUp(props.theme.breakpoints.md, css`
+        background: ${props.theme.colors.dark};
+    `)};
+`;
+
+
+```
+
 For a full list of available functions and more details, please see [this doc](https://github.com/doubleedesign/styled-media-queries/blob/master/docs.md).

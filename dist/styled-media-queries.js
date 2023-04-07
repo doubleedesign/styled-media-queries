@@ -3,7 +3,7 @@ import { css } from 'styled-components';
  * Apply CSS at the given width breakpoint and above
  *
  * @param {number} breakpoint
- * @param {SimpleInterpolation} styles
+ * @param {SimpleInterpolation | FlattenInterpolation<ThemeProps<unknown>>} styles
  */
 export function viewportWidthUp(breakpoint, styles) {
     return css `
@@ -17,7 +17,7 @@ export function viewportWidthUp(breakpoint, styles) {
  * Alias for viewportWidthUp
  *
  * @param {number} breakpoint
- * @param {SimpleInterpolation} styles
+ * @param {SimpleInterpolation | FlattenInterpolation<ThemeProps<unknown>>} styles
  */
 export function breakpointUp(breakpoint, styles) {
     return viewportWidthUp(breakpoint, styles);
@@ -29,7 +29,7 @@ export function breakpointUp(breakpoint, styles) {
  * @see https://getbootstrap.com/docs/5.2/layout/breakpoints/
  *
  * @param {number} breakpoint
- * @param {SimpleInterpolation} styles
+ * @param {SimpleInterpolation | FlattenInterpolation<ThemeProps<unknown>>} styles
  */
 export function viewportWidthDown(breakpoint, styles) {
     return css `
@@ -43,7 +43,7 @@ export function viewportWidthDown(breakpoint, styles) {
  * Alias for viewportWidthDown
  *
  * @param {number} breakpoint
- * @param {SimpleInterpolation} styles
+ * @param {SimpleInterpolation | FlattenInterpolation<ThemeProps<unknown>>} styles
  */
 export function breakpointDown(breakpoint, styles) {
     return viewportWidthDown(breakpoint, styles);
@@ -56,7 +56,7 @@ export function breakpointDown(breakpoint, styles) {
  *
  * @param {number} startBreakpoint
  * @param {number} endBreakpoint
- * @param {SimpleInterpolation} styles
+ * @param {SimpleInterpolation | FlattenInterpolation<ThemeProps<unknown>>} styles
  */
 export function viewportWidthBetween(startBreakpoint, endBreakpoint, styles) {
     return css `
@@ -71,7 +71,7 @@ export function viewportWidthBetween(startBreakpoint, endBreakpoint, styles) {
  *
  * @param {number} startBreakpoint
  * @param {number} endBreakpoint
- * @param {SimpleInterpolation} styles
+ * @param {SimpleInterpolation | FlattenInterpolation<ThemeProps<unknown>>} styles
  */
 export function breakpointBetween(startBreakpoint, endBreakpoint, styles) {
     return viewportWidthBetween(startBreakpoint, endBreakpoint, styles);
@@ -80,7 +80,7 @@ export function breakpointBetween(startBreakpoint, endBreakpoint, styles) {
  * Apply CSS at the given height breakpoint and above
  *
  * @param {number} height
- * @param {SimpleInterpolation} styles
+ * @param {SimpleInterpolation | FlattenInterpolation<ThemeProps<unknown>>} styles
  */
 export function viewportHeightUp(height, styles) {
     return css `
@@ -93,7 +93,7 @@ export function viewportHeightUp(height, styles) {
  * Apply CSS below the given height breakpoint
  *
  * @param {number} height
- * @param {SimpleInterpolation} styles
+ * @param {SimpleInterpolation | FlattenInterpolation<ThemeProps<unknown>>} styles
  */
 export function viewportHeightDown(height, styles) {
     return css `
@@ -108,7 +108,7 @@ export function viewportHeightDown(height, styles) {
  *
  * @param {number} width
  * @param {number} height
- * @param {SimpleInterpolation} styles
+ * @param {SimpleInterpolation | FlattenInterpolation<ThemeProps<unknown>>} styles
  */
 export function viewportMinAspectRatio(width, height, styles) {
     return css `
@@ -123,7 +123,7 @@ export function viewportMinAspectRatio(width, height, styles) {
  *
  * @param {number} width
  * @param {number} height
- * @param {SimpleInterpolation} styles
+ * @param {SimpleInterpolation | FlattenInterpolation<ThemeProps<unknown>>} styles
  */
 export function viewportMaxAspectRatio(width, height, styles) {
     return css `
@@ -136,7 +136,7 @@ export function viewportMaxAspectRatio(width, height, styles) {
  * Apply styles for users who have settings indicating a preference for lower contrast
  * @see https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-contrast
  *
- * @param {SimpleInterpolation} styles
+ * @param {SimpleInterpolation | FlattenInterpolation<ThemeProps<unknown>>} styles
  */
 export function userPrefersLessContrast(styles) {
     return css `
@@ -149,7 +149,7 @@ export function userPrefersLessContrast(styles) {
  * Apply styles for users who have settings indicating a preference for higher contrast
  * @see https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-contrast
  *
- * @param {SimpleInterpolation} styles
+ * @param {SimpleInterpolation | FlattenInterpolation<ThemeProps<unknown>>} styles
  */
 export function userPrefersMoreContrast(styles) {
     return css `
@@ -162,7 +162,7 @@ export function userPrefersMoreContrast(styles) {
  * Apply styles for users who have settings indicating a preference for reduced motion
  * @see https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-contrast
  *
- * @param {SimpleInterpolation} styles
+ * @param {SimpleInterpolation | FlattenInterpolation<ThemeProps<unknown>>} styles
  */
 export function userPrefersReducedMotion(styles) {
     return css `

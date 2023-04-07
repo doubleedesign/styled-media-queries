@@ -1,12 +1,12 @@
-import { css, SimpleInterpolation } from 'styled-components';
+import { css, SimpleInterpolation, FlattenInterpolation, ThemeProps } from 'styled-components';
 
 /**
  * Apply CSS at the given width breakpoint and above
  *
  * @param {number} breakpoint
- * @param {SimpleInterpolation} styles
+ * @param {SimpleInterpolation | FlattenInterpolation<ThemeProps<unknown>>} styles
  */
-export function viewportWidthUp(breakpoint: number, styles: SimpleInterpolation) {
+export function viewportWidthUp(breakpoint: number, styles: SimpleInterpolation | FlattenInterpolation<ThemeProps<unknown>>) {
 	return css`
 		@media screen and (min-width: ${breakpoint}px) {
 			${styles}
@@ -19,9 +19,9 @@ export function viewportWidthUp(breakpoint: number, styles: SimpleInterpolation)
  * Alias for viewportWidthUp
  *
  * @param {number} breakpoint
- * @param {SimpleInterpolation} styles
+ * @param {SimpleInterpolation | FlattenInterpolation<ThemeProps<unknown>>} styles
  */
-export function breakpointUp(breakpoint: number, styles: SimpleInterpolation) {
+export function breakpointUp(breakpoint: number, styles: SimpleInterpolation | FlattenInterpolation<ThemeProps<unknown>>) {
 	return viewportWidthUp(breakpoint, styles);
 }
 
@@ -33,9 +33,9 @@ export function breakpointUp(breakpoint: number, styles: SimpleInterpolation) {
  * @see https://getbootstrap.com/docs/5.2/layout/breakpoints/
  *
  * @param {number} breakpoint
- * @param {SimpleInterpolation} styles
+ * @param {SimpleInterpolation | FlattenInterpolation<ThemeProps<unknown>>} styles
  */
-export function viewportWidthDown(breakpoint: number, styles: SimpleInterpolation) {
+export function viewportWidthDown(breakpoint: number, styles: SimpleInterpolation | FlattenInterpolation<ThemeProps<unknown>>) {
 	return css`
 		@media screen and (max-width: ${breakpoint - 0.02}px) {
 			${styles}
@@ -49,9 +49,9 @@ export function viewportWidthDown(breakpoint: number, styles: SimpleInterpolatio
  * Alias for viewportWidthDown
  *
  * @param {number} breakpoint
- * @param {SimpleInterpolation} styles
+ * @param {SimpleInterpolation | FlattenInterpolation<ThemeProps<unknown>>} styles
  */
-export function breakpointDown(breakpoint: number, styles: SimpleInterpolation) {
+export function breakpointDown(breakpoint: number, styles: SimpleInterpolation | FlattenInterpolation<ThemeProps<unknown>>) {
 	return viewportWidthDown(breakpoint, styles);
 }
 
@@ -64,9 +64,9 @@ export function breakpointDown(breakpoint: number, styles: SimpleInterpolation) 
  *
  * @param {number} startBreakpoint
  * @param {number} endBreakpoint
- * @param {SimpleInterpolation} styles
+ * @param {SimpleInterpolation | FlattenInterpolation<ThemeProps<unknown>>} styles
  */
-export function viewportWidthBetween(startBreakpoint: number, endBreakpoint: number, styles: SimpleInterpolation) {
+export function viewportWidthBetween(startBreakpoint: number, endBreakpoint: number, styles: SimpleInterpolation | FlattenInterpolation<ThemeProps<unknown>>) {
 	return css`
 		@media screen and (min-width: ${startBreakpoint}px) and (max-width: ${endBreakpoint - 0.02}px) {
 			${styles}
@@ -81,9 +81,9 @@ export function viewportWidthBetween(startBreakpoint: number, endBreakpoint: num
  *
  * @param {number} startBreakpoint
  * @param {number} endBreakpoint
- * @param {SimpleInterpolation} styles
+ * @param {SimpleInterpolation | FlattenInterpolation<ThemeProps<unknown>>} styles
  */
-export function breakpointBetween(startBreakpoint: number, endBreakpoint: number, styles: SimpleInterpolation) {
+export function breakpointBetween(startBreakpoint: number, endBreakpoint: number, styles: SimpleInterpolation | FlattenInterpolation<ThemeProps<unknown>>) {
 	return viewportWidthBetween(startBreakpoint, endBreakpoint, styles);
 }
 
@@ -92,9 +92,9 @@ export function breakpointBetween(startBreakpoint: number, endBreakpoint: number
  * Apply CSS at the given height breakpoint and above
  *
  * @param {number} height
- * @param {SimpleInterpolation} styles
+ * @param {SimpleInterpolation | FlattenInterpolation<ThemeProps<unknown>>} styles
  */
-export function viewportHeightUp(height: number, styles: SimpleInterpolation) {
+export function viewportHeightUp(height: number, styles: SimpleInterpolation | FlattenInterpolation<ThemeProps<unknown>>) {
 	return css`
 		@media screen and (min-height: ${height}px) {
 			${styles}
@@ -107,9 +107,9 @@ export function viewportHeightUp(height: number, styles: SimpleInterpolation) {
  * Apply CSS below the given height breakpoint
  *
  * @param {number} height
- * @param {SimpleInterpolation} styles
+ * @param {SimpleInterpolation | FlattenInterpolation<ThemeProps<unknown>>} styles
  */
-export function viewportHeightDown(height: number, styles: SimpleInterpolation) {
+export function viewportHeightDown(height: number, styles: SimpleInterpolation | FlattenInterpolation<ThemeProps<unknown>>) {
 	return css`
 		@media screen and (max-height: ${height - 0.02}px) {
 			${styles}
@@ -124,9 +124,9 @@ export function viewportHeightDown(height: number, styles: SimpleInterpolation) 
  *
  * @param {number} width
  * @param {number} height
- * @param {SimpleInterpolation} styles
+ * @param {SimpleInterpolation | FlattenInterpolation<ThemeProps<unknown>>} styles
  */
-export function viewportMinAspectRatio(width: number, height: number, styles: SimpleInterpolation) {
+export function viewportMinAspectRatio(width: number, height: number, styles: SimpleInterpolation | FlattenInterpolation<ThemeProps<unknown>>) {
 	return css`
 		@media screen and (min-aspect-ratio: ${width}/${height}) {
 			${styles}
@@ -141,9 +141,9 @@ export function viewportMinAspectRatio(width: number, height: number, styles: Si
  *
  * @param {number} width
  * @param {number} height
- * @param {SimpleInterpolation} styles
+ * @param {SimpleInterpolation | FlattenInterpolation<ThemeProps<unknown>>} styles
  */
-export function viewportMaxAspectRatio(width: number, height: number, styles: SimpleInterpolation) {
+export function viewportMaxAspectRatio(width: number, height: number, styles: SimpleInterpolation | FlattenInterpolation<ThemeProps<unknown>>) {
 	return css`
 		@media screen and (max-aspect-ratio: ${width}/${height}) {
 			${styles}
@@ -156,9 +156,9 @@ export function viewportMaxAspectRatio(width: number, height: number, styles: Si
  * Apply styles for users who have settings indicating a preference for lower contrast
  * @see https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-contrast
  *
- * @param {SimpleInterpolation} styles
+ * @param {SimpleInterpolation | FlattenInterpolation<ThemeProps<unknown>>} styles
  */
-export function userPrefersLessContrast(styles: SimpleInterpolation) {
+export function userPrefersLessContrast(styles: SimpleInterpolation | FlattenInterpolation<ThemeProps<unknown>>) {
 	return css`
         @media (prefers-contrast: less) {
 			${styles}
@@ -171,9 +171,9 @@ export function userPrefersLessContrast(styles: SimpleInterpolation) {
  * Apply styles for users who have settings indicating a preference for higher contrast
  * @see https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-contrast
  *
- * @param {SimpleInterpolation} styles
+ * @param {SimpleInterpolation | FlattenInterpolation<ThemeProps<unknown>>} styles
  */
-export function userPrefersMoreContrast(styles: SimpleInterpolation) {
+export function userPrefersMoreContrast(styles: SimpleInterpolation | FlattenInterpolation<ThemeProps<unknown>>) {
 	return css`
         @media (prefers-contrast: more) {
 			${styles}
@@ -186,9 +186,9 @@ export function userPrefersMoreContrast(styles: SimpleInterpolation) {
  * Apply styles for users who have settings indicating a preference for reduced motion
  * @see https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-contrast
  *
- * @param {SimpleInterpolation} styles
+ * @param {SimpleInterpolation | FlattenInterpolation<ThemeProps<unknown>>} styles
  */
-export function userPrefersReducedMotion(styles: SimpleInterpolation) {
+export function userPrefersReducedMotion(styles: SimpleInterpolation | FlattenInterpolation<ThemeProps<unknown>>) {
 	return css`
         @media (prefers-reduced-motion) {
 			${styles}
