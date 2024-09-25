@@ -4,6 +4,10 @@ Shorthand for media queries within [styled-components](https://styled-components
 
 [Find on NPM](https://www.npmjs.com/package/@doubleedesign/styled-media-queries)
 
+## Versions
+
+As of version 1.0.0, this package is suitable for styled-components v6. For v5, use version 0.2.0.
+
 ---
 
 ## Usage Examples

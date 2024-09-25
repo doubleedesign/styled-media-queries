@@ -1,6 +1,6 @@
 {
 	"name": "@doubleedesign/styled-media-queries",
-	"version": "0.2.0",
+	"version": "1.0.0",
 	"type": "module",
 	"main": "dist/styled-media-queries.js",
 	"description": "Shorthand for media queries within styled components",
@@ -9,20 +9,25 @@
 		"type": "git",
 		"url": "https://github.com/doubleedesign/styled-media-queries"
 	},
-	"keywords": ["styled-components", "css-in-js"],
+	"keywords": [
+		"styled-components",
+		"css-in-js"
+	],
 	"license": "MIT",
 	"scripts": {
 		"build": "tsc"
 	},
 	"peerDependencies": {
-		"styled-components": "^5.3.9"
+		"styled-components": "^6.1.13"
 	},
 	"devDependencies": {
-		"@types/styled-components": "^5.1.26",
+		"@types/node": "^22.7.0",
+		"@types/react": "^18.3.9",
+		"@types/react-dom": "^18.3.0",
 		"@typescript-eslint/eslint-plugin": "^5.56.0",
 		"@typescript-eslint/parser": "^5.56.0",
 		"eslint": "^8.36.0",
-		"styled-components": "^5.3.9",
-		"typescript": "^5.0.2"
+		"styled-components": "^6.1.13",
+		"typescript": "^5.6.2"
 	}
 }
